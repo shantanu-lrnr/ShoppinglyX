@@ -1,0 +1,10 @@
+## Django Project - ShoppinglyX(E-Commerece)
+
+![home](https://raw.githubusercontent.com/shantanu-lrnr/ShoppinglyX/main/screenshots/home.png)
+![login](https://raw.githubusercontent.com/shantanu-lrnr/ShoppinglyX/main/screenshots/login.png)
+![registration](https://raw.githubusercontent.com/shantanu-lrnr/ShoppinglyX/main/screenshots/registration.png)
+![product1](https://raw.githubusercontent.com/shantanu-lrnr/ShoppinglyX/main/screenshots/p1.png)
+![product2](https://raw.githubusercontent.com/shantanu-lrnr/ShoppinglyX/main/screenshots/p2.png)
+![cart](https://raw.githubusercontent.com/shantanu-lrnr/ShoppinglyX/main/screenshots/cart.png)
+![placeorder](https://raw.githubusercontent.com/shantanu-lrnr/ShoppinglyX/main/screenshots/placeorder.png)
+![delivery](https://raw.githubusercontent.com/shantanu-lrnr/ShoppinglyX/main/screenshots/delivery.png)
