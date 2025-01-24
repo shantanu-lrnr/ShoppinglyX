@@ -1,0 +1,58 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Product Detail{% endblock title %}
+{% block main-content %}
+{% comment %} <div class="container my-5"> {% endcomment %}
+<div class="container my-4">
+ <div class="row">
+  <div class="col-sm-6 text-center align-self-center">
+   <img src="{{product.product_image.url}}" alt="" class="img-fluid img-thumbnail" height="600px" width="500px">
+  </div>
+  <div class="col-sm-5 offset-sm-1">
+   <h2>{{product.title}}</h2>
+   <hr>
+   {% comment %} <p><strong>Product Description:</strong> {{product.description}}</p> <br> {% endcomment %}
+   <p>
+    <strong>Product Description:</strong> 
+    <ul>
+      {% for point in product.description_points %}
+          <li>{{ point }}</li>
+      {% endfor %}
+  </ul>
+  </p> <br>
+   {% comment %} <h4>Rs.{{product.discounted_price}} <small class="fw-light text-decoration-line-through">{{product.selling_price}}</small>{{percentage_off|floatformat:"0"}}%</h4> <br> {% endcomment %}
+   <h4 style="margin: 0; font-size: 24px; font-weight: bold;">
+    Special price
+  </h4>
+  <h2 style="margin: 5px 0; font-size: 28px; color: #212121; font-weight: bold;">
+    ₹{{ product.discounted_price }} 
+    <span style="text-decoration: line-through; color: #878787; font-size: 18px; margin-left: 10px;">
+      ₹{{ product.selling_price }}
+    </span>
+    <span style="color: #388E3C; font-size: 18px; font-weight: bold; margin-left: 10px;">
+      {{ percentage_off|floatformat:"0" }}% off
+    </span>
+  </h2>
+  
+
+   {% if product_available %}
+     <a href="{% url 'showcart' %}" class="btn btn-warning shadow px-5 py-2 ms-4">Go to cart</a>
+   {% else %}
+     <form action="{% url "add-to-cart" %}" class="d-inline">
+          <input type="hidden" name="prod_id" value="{{product.id}}">
+          <button class="btn btn-primary shadow px-5 py-2">Add to Cart</button>
+     </form>
+   {% endif %}
+   
+   <a href="{% url 'buynow' product.id %}" class="btn btn-danger shadow px-5 py-2 ms-4">Buy Now</a>
+   <h5 class="mt-5">Available Offers</h5>
+   <ul>
+    <li><strong>Bank Offer</strong> 5% Unlimited Cashback on Flipkart Axis Bank Credit</li>
+    <li><strong>Special Price</strong>  Get extra ₹3000 off (price inclusive of discount)</li>
+    <li><strong>No cost EMI</strong> ₹1,667/month. Standard EMI also available</li>
+    <li><strong>Partner Offer</strong> ₹2000 Flipkart Gift Card on Every 1000th Transaction with a new Visa Debit/Credit Card</li>
+   </ul>
+  </div>
+ </div>
+</div>
+{% endblock main-content %}

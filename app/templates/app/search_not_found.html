@@ -1,0 +1,36 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}Search Not Found{% endblock title %}
+
+{% block main-content %}
+<div class="container text-center d-flex flex-column align-items-center justify-content-center" style="min-height: 80vh;">
+    <!-- Image Section -->
+    <div class="mb-4">
+        <img src="{% static 'app/images/not_found.png' %}" alt="No Results Found" 
+             class="img-fluid" 
+             style="max-width: 300px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);">
+    </div>
+
+    <!-- Message Section -->
+    <h1 style="font-size: 2.5rem; font-weight: bold; color:rgb(33, 8, 8);">Oops! No Results Found</h1>
+    {% comment %} <h1 style="font-size: 2.5rem; font-weight: bold; color: #ff6b6b;">Oops! No Results Found</h1> {% endcomment %}
+    <p style="font-size: 1.2rem; color: #555; max-width: 600px; margin: 1rem auto;">
+        We couldn't find any results matching your search. Please check your spelling or try searching with different keywords.
+    </p>
+
+    <!-- Action Buttons -->
+    <div class="mt-4">
+        <a href="{% url 'home' %}" 
+           class="btn btn-primary btn-lg me-3" 
+           style="border-radius: 50px; padding: 0.75rem 2rem; font-size: 1.1rem;">
+            Go Back Home
+        </a>
+        <a href="#" 
+           class="btn btn-outline-secondary btn-lg" 
+           style="border-radius: 50px; padding: 0.75rem 2rem; font-size: 1.1rem;">
+            Try Another Search
+        </a>
+    </div>
+</div>
+{% endblock main-content %}
